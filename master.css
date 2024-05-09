@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "Arial Narrow";
+  src: url("arialnarrow.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Сброс стандартных стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+body,
+html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Убирает горизонтальный скролл, если не нужен */
+  margin: 0;
+  padding: 0;
+  background: #e6e6e6;
+  z-index: -1;
+}
+
+a {
+  color: inherit; /* Убирает стандартное синее подчеркивание ссылок */
+  text-decoration: none; /* Убирает подчеркивание у ссылок */
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="email"] {
+  border: 0px solid #ccc; /* Граница */
+}
+
+/* ЫЫВВВВ СБОРС */
+
+/* КОНСТАНТЫ */
+:root {
+  --main-black: #171717;
+  --white: #efefef;
+  --purple: #8591ff;
+  --red: #ff4545;
+  --light-yellow: #ebff00;
+  --yellow: #ffe55c;
+  --orange: #ff9e57;
+  --pink: #fe92b9;
+  --dark-pink: #ff589e;
+  --green: #16a92d;
+  --purple: #8f8dff;
+  --green-water: #4dbea9;
+  --green-yellow: #d8ff3a;
+  --green-light-water: #aeffb1;
+  --light-blue: #2dd4f9;
+}
+
+/* СТИЛИ ДЕСКТОП */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/noise.gif") repeat fixed;
+  opacity: 0.05; /* Устанавливаем прозрачность гифки */
+  z-index: -1; /* Гифка будет под всеми другими элементами */
+}
+
+.marquee {
+  background: var(--purple);
+}
+
+.marquee p {
+  font-size: 32px;
+  line-height: 28px;
+  color: var(--main-black);
+  text-shadow: -1px -1px 0 var(--main-black), 1px -1px 0 var(--main-black),
+    -1px 1px 0 var(--main-black), 1px 1px 0 var(--main-black);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marquee 30s linear infinite;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.block {
+  font-size: 90px;
+  line-height: 76px;
+  letter-spacing: -3.639px;
+}
+
+#announcement {
+  color: var(--red);
+  background: var(--light-yellow);
+  padding-right: 4px;
+}
+
+#announcement-2 {
+  color: var(--main-black);
+  background: var(--red);
+  padding-right: 4px;
+}
+
+#localTime {
+  color: var(--pink);
+  background: var(--green);
+  padding-right: 4px;
+}
+
+#localTime-2 {
+  color: var(--main-black);
+  background: var(--pink);
+  padding-right: 4px;
+}
+
+#sessionTime {
+  color: var(--purple);
+  background: #ff3d3d;
+  padding-right: 4px;
+}
+
+#sessionTime-2 {
+  color: var(--main-black);
+  background: var(--purple);
+  padding-right: 4px;
+}
+
+#localDate {
+  color: var(--green-water);
+  background: var(--green-yellow);
+  padding-right: 4px;
+}
+
+#localDate-2 {
+  color: var(--main-black);
+  background: var(--green-water);
+  padding-right: 4px;
+}
+
+#screenRes {
+  color: var(--yellow);
+  background: var(--light-blue);
+  padding-right: 4px;
+}
+
+#screenRes-2 {
+  color: var(--main-black);
+  background: var(--yellow);
+  padding-right: 4px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#x {
+  color: var(--orange);
+  background: var(--dark-pink);
+  padding: 0 4px;
+}
+
+#x:hover {
+  color: var(--dark-pink);
+  background: var(--orange);
+  padding: 0 4px;
+}
+
+#arena {
+  color: var(--red);
+  background: var(--white);
+  padding: 0 4px;
+}
+
+#arena:hover {
+  color: var(--white);
+  background: var(--red);
+  padding: 0 4px;
+}
+
+#instagram {
+  color: var(--green-light-water);
+  background: var(--light-blue);
+  padding-right: 4px;
+}
+
+#instagram:hover {
+  color: var(--light-blue);
+  background: var(--green-light-water);
+  padding-right: 4px;
+}
+
+#telegram {
+  color: var(--pink);
+  background: var(--green-yellow);
+  padding: 0 4px;
+}
+
+#telegram:hover {
+  color: var(--green-yellow);
+  background: var(--pink);
+  padding: 0 4px;
+}
+
+.email-collection {
+  width: 100%;
+  height: 84px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-collection form {
+  width: 100%;
+  height: 100%; /* Форма теперь занимает всю высоту .email-collection */
+  position: relative;
+}
+
+input[type="email"] {
+  width: 100%;
+  height: 84px; /* Указываем явную высоту, равную родительскому блоку */
+  font-size: 90px;
+  padding: 0 4px; /* Установим только горизонтальные отступы */
+  color: #ffbcd4;
+  background: var(--red);
+  text-transform: uppercase;
+  border: none; /* Убираем рамку, если она есть */
+  box-sizing: border-box; /* Гарантируем, что padding включен в высоту */
+  line-height: normal; /* Устанавливаем стандартное значение для line-height */
+  display: flex; /* Добавляем flex для центрирования текста */
+  align-items: center; /* Центрируем текст вертикально */
+}
+
+input::placeholder {
+  color: #ffbcd4;
+  letter-spacing: -3.912px;
+  line-height: 80px;
+}
+
+form img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 6px;
+}
+
+.filter {
+  position: absolute;
+  bottom: 84px;
+  display: flex;
+  flex-direction: row;
+  background: #ffbcd4;
+  width: 100%;
+  justify-content: center;
+  background: ;
+}
+
+.filter a,
+p {
+  text-transform: uppercase;
+  padding-right: 4px;
+  color: var(--red);
+}
+
+/* АНИМАЦИИ */
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
