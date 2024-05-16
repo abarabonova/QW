@@ -49,7 +49,7 @@ input[type="email"] {
   --white: #efefef;
   --purple: #8591ff;
   --red: #ff4545;
-  --light-yellow: #ebff00;
+  --light-yellow: #ffe300;
   --yellow: #ffe55c;
   --orange: #ff9e57;
   --pink: #fe92b9;
@@ -258,15 +258,17 @@ form img {
   padding: 12px 6px;
 }
 
-.filter {
+.filter-wrapper {
   position: absolute;
   bottom: 84px;
-  display: flex;
-  flex-direction: row;
-  background: #ffbcd4;
   width: 100%;
+  display: flex;
   justify-content: center;
-  background: ;
+}
+
+.filter {
+  display: flex;
+  background: #ffbcd4;
 }
 
 .filter a,
